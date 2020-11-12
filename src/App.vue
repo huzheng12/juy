@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-07-13 17:34:03
  * @LastEditors: huzheng
- * @LastEditTime: 2020-10-22 12:19:15
+ * @LastEditTime: 2020-11-12 17:04:37
 -->
 
 // VUE_APP_BASE_API = http://192.168.1.114:8087/
@@ -19,7 +19,7 @@ export default {
   mounted () {
     this.$store.commit('GET_APP_STORAGE')
     // this.$api.SiteConfiguration.infolist().then(res=>{
-    //     if(res.success){
+    //     if(res.success){aaaaaaaaa
     //       if(res.obj.configList&&res.obj.configList.length>0){
     //         res.obj.configList.forEach(item=>{
     //           if(item.configkey=='managerName'){
