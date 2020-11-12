@@ -1,0 +1,206 @@
+//文本大小
+$text-font-xs:12;
+$text-font-sm:13;
+$text-font-bs:14;
+$text-font-md:16;
+$text-font-lg:18;
+$text-font-xl:20;
+//文本颜色
+$text-color-main:#303133;
+$text-color-basic:#606266;
+$text-color-sub:#909399;
+$text-color-placeholder:#C0C4CC;
+
+@function parseUnit($px) {
+    @return $px + px
+}
+
+/* ==================
+                  布局
+          ==================== */
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.flex__item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.col {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.justify-center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.justify-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.justify-bt {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+}
+
+.justify-ad {
+    -webkit-box-pack: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+}
+
+.align-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.align-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ==================
+               字体
+          ==================== */
+.sub-text {
+    font-size: parseUnit($text-font-sm) !important;
+}
+
+.font-xs {
+    font-size: parseUnit($text-font-xs) !important;
+    color: $text-color-sub;
+}
+
+.font-sm {
+    font-size: parseUnit($text-font-sm) !important;
+    color: $text-color-sub;
+}
+
+.font-bs {
+    font-size: parseUnit($text-font-bs) !important;
+    color: $text-color-main;
+}
+
+.font-md {
+    font-size: parseUnit($text-font-md) !important;
+    color: $text-color-main;
+}
+
+.font-lg {
+    font-size: parseUnit($text-font-lg) !important;
+    color: $text-color-main;
+    font-weight: 600;
+}
+
+.font-xl {
+    font-size: parseUnit($text-font-xl) !important;
+    color: $text-color-main;
+    font-weight: 700;
+}
+
+/* ==================
+               边距
+        ==================== */
+$spaceList:(xs:5,
+    sm:10,
+    md:15,
+    lg:20,
+    xl:25,
+    xxl:30);
+
+.meu-space {
+    padding: parseUnit(10) parseUnit(15);
+}
+
+@each $key,
+$item in $spaceList {
+    .pd-#{$key} {
+        padding: parseUnit($item) !important;
+    }
+
+    .pd-x-#{$key} {
+        padding-left: parseUnit($item) !important;
+        padding-right: parseUnit($item) !important;
+    }
+
+    .pd-y-#{$key} {
+        padding-top: parseUnit($item) !important;
+        padding-bottom: parseUnit($item) !important;
+    }
+
+    .pd-t-#{$key} {
+        padding-top: parseUnit($item) !important;
+    }
+
+    .pd-b-#{$key} {
+        padding-bottom: parseUnit($item) !important;
+    }
+
+    .pd-l-#{$key} {
+        padding-left: parseUnit($item) !important;
+    }
+
+    .pd-r-#{$key} {
+        padding-right: parseUnit($item) !important;
+    }
+
+    .mg-#{$key} {
+        margin: parseUnit($item) !important;
+    }
+
+    .mg-x-#{$key} {
+        margin-left: parseUnit($item) !important;
+        margin-right: parseUnit($item) !important;
+    }
+
+    .mg-y-#{$key} {
+        margin-top: parseUnit($item) !important;
+        margin-bottom: parseUnit($item) !important;
+    }
+
+    .mg-t-#{$key} {
+        margin-top: parseUnit($item) !important;
+    }
+
+    .mg-b-#{$key} {
+        margin-bottom: parseUnit($item) !important;
+    }
+
+    .mg-l-#{$key} {
+        margin-left: parseUnit($item) !important;
+    }
+
+    .mg-r-#{$key} {
+        margin-right: parseUnit($item) !important;
+    }
+}
